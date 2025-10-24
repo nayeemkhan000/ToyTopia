@@ -100,61 +100,61 @@ const Signin = () => {
   };
 
   return (
-    <div className="w-full flex justify-center items-center min-h-[80vh]">
-      <div className="bg-white rounded-2xl p-10 w-[90%] max-w-[500px] shadow-2xl">
+    <div className="w-full flex justify-center items-center min-h-[80vh] py-12">
+      <div className="card p-8 md:p-10 w-[90%] max-w-[500px] shadow-2xl">
         <h1
-          className="text-[#FF616B] text-4xl text-center mb-10"
-          style={{ fontFamily: "Fredoka One" }}
+          className="text-accent text-3xl md:text-4xl text-center mb-10 font-bold"
+          style={{ fontFamily: "Inter, sans-serif" }}
         >
-          Sign In
+          Welcome Back
         </h1>
 
         {errorMessage && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg mb-4">
+          <div className="bg-red-400/10 border border-red-400 text-red-300 px-4 py-3 rounded-lg mb-6">
             {errorMessage}
           </div>
         )}
 
         <form onSubmit={handleFormSubmit} className="flex flex-col gap-6">
-          <div className="flex items-center gap-3 border rounded-full px-5 py-3 shadow-sm bg-white focus-within:ring-2 focus-within:ring-[#FBC270]">
-            <FaUser className="text-gray-400 text-xl" />
+          <div className="flex items-center gap-3 border border-accent rounded-xl px-5 py-4 shadow-sm bg-accent/10 focus-within:ring-2 focus-within:ring-accent">
+            <FaUser className="text-secondary text-xl" />
             <input
               type="email"
               name="email"
-              placeholder="Email address"
+              placeholder="Enter your email"
               value={userFormData.email}
               onChange={handleInputChange}
               required
               disabled={isLoading}
-              className="outline-none flex-1 text-gray-700 bg-transparent"
+              className="input-field flex-1 bg-transparent border-none focus:ring-0"
             />
           </div>
 
-          <div className="flex items-center gap-3 border rounded-full px-5 py-3 shadow-sm bg-white focus-within:ring-2 focus-within:ring-[#FBC270]">
-            <FaLock className="text-gray-400 text-xl" />
+          <div className="flex items-center gap-3 border border-accent rounded-xl px-5 py-4 shadow-sm bg-accent/10 focus-within:ring-2 focus-within:ring-accent">
+            <FaLock className="text-secondary text-xl" />
             <input
               type={isPasswordVisible ? "text" : "password"}
               name="password"
-              placeholder="Password"
+              placeholder="Enter your password"
               value={userFormData.password}
               onChange={handleInputChange}
               required
               disabled={isLoading}
-              className="outline-none flex-1 text-gray-700 bg-transparent"
+              className="input-field flex-1 bg-transparent border-none focus:ring-0"
             />
             <span
               onClick={() => setIsPasswordVisible(!isPasswordVisible)}
-              className="cursor-pointer text-gray-500"
+              className="cursor-pointer text-secondary hover:text-accent transition-colors"
             >
               {isPasswordVisible ? <FaEyeSlash /> : <FaEye />}
             </span>
           </div>
 
-          <div className="flex justify-end text-sm text-[#FF616B] font-semibold">
+          <div className="flex justify-end text-sm text-accent font-semibold">
             <button
               type="button"
               onClick={handleForgotPasswordClick}
-              className="hover:underline cursor-pointer"
+              className="hover:underline cursor-pointer transition-colors"
             >
               Forgot Password?
             </button>
@@ -163,44 +163,44 @@ const Signin = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="bg-[#FBC270] text-[#00000088] shadow-md font-semibold py-3 rounded-full hover:bg-[#4178a1] hover:text-white transition-colors cursor-pointer disabled:opacity-50"
+            className="btn-primary w-full py-4 text-lg font-semibold rounded-xl disabled:opacity-50"
           >
             {isLoading ? "Signing In..." : "Sign In"}
           </button>
         </form>
 
         <div className="flex items-center my-6">
-          <div className="flex-1 bg-gray-300"></div>
-          <p className="px-4 text-gray-500 text-sm">Or sign in with</p>
-          <div className="flex-1 bg-gray-300"></div>
+          <div className="flex-1 bg-accent h-px"></div>
+          <p className="px-4 text-secondary text-sm">Or continue with</p>
+          <div className="flex-1 bg-accent h-px"></div>
         </div>
 
         <div className="flex justify-center gap-4">
           <button
             onClick={() => handleSocialAuthentication("google")}
             disabled={isLoading}
-            className="flex items-center justify-center gap-2 px-5 py-3 shadow-xl rounded-full cursor-pointer transition disabled:opacity-50 hover:scale-[1.1]"
+            className="btn-secondary flex items-center justify-center gap-3 px-6 py-3 rounded-xl disabled:opacity-50 hover:scale-105 transition-all"
           >
-            <FaGoogle className="text-red-500" />
-            <p className="text-black">Google</p>
+            <FaGoogle className="text-red-400" />
+            <p className="text-primary">Google</p>
           </button>
 
           <button
             onClick={() => handleSocialAuthentication("github")}
             disabled={isLoading}
-            className="flex items-center justify-center gap-2 px-5 py-3 shadow-xl rounded-full cursor-pointer transition disabled:opacity-50 hover:scale-[1.1]"
+            className="btn-secondary flex items-center justify-center gap-3 px-6 py-3 rounded-xl disabled:opacity-50 hover:scale-105 transition-all"
           >
-            <FaGithub className="text-gray-700" />
-            <p className="text-black">Github</p>
+            <FaGithub className="text-primary" />
+            <p className="text-primary">GitHub</p>
           </button>
         </div>
 
-        <div className="text-center mt-6 text-gray-600">
+        <div className="text-center mt-6 text-secondary">
           <p>
             Don't have an account?{" "}
             <Link
               to="/signup"
-              className="text-[#FF616B] font-semibold hover:underline"
+              className="text-accent font-semibold hover:underline transition-colors"
             >
               Create one
             </Link>

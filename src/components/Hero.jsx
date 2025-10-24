@@ -50,37 +50,37 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden rounded-xl bg-[#C1E5FF] mt-[-60px]">
+    <div className="relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-accent to-primary mt-[-80px] shadow-2xl">
       {heroBanners.map((bannerItem, index) => (
         <div
           key={bannerItem.id}
-          className={`flex flex-col md:flex-row items-center justify-between transition-all duration-1000 ease-in-out transform ${
+          className={`flex flex-col lg:flex-row items-center justify-between transition-all duration-1000 ease-in-out transform ${
             index === currentBannerIndex
               ? "translate-x-0 opacity-100"
               : "translate-x-full opacity-0 absolute top-0 left-0"
           }`}
         >
-          <div className="md:w-1/2 w-full">
+          <div className="lg:w-1/2 w-full">
             <img
               src={bannerItem.image}
               alt={bannerItem.alt}
-              className="w-full h-auto object-cover rounded-b-xl"
+              className="w-full h-auto object-cover rounded-b-2xl"
             />
           </div>
 
-          <div className="flex flex-col gap-5 justify-center items-center text-center w-1/2 px-[100px]">
+          <div className="flex flex-col gap-6 justify-center items-center text-center lg:w-1/2 px-8 lg:px-16 py-12">
             <h1
-              className="text-[60px] font-semibold mb-4 text-[#000000]"
-              style={{ fontFamily: "Fredoka One" }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary animate-fadeInUp"
+              style={{ fontFamily: "Inter, sans-serif" }}
             >
               {bannerItem.title}
             </h1>
-            <p className="mb-6 text-2xl text-[#646464]">{bannerItem.description}</p>
+            <p className="mb-8 text-lg md:text-xl text-secondary leading-relaxed animate-fadeIn">{bannerItem.description}</p>
             <button
               onClick={() => handleShopNowClick(bannerItem.toyId)}
-              className="bg-[#FBC270] text-[#00000088] px-6 py-3 font-semibold shadow-md rounded-full hover:bg-[#4178a1] transition-colors hover:text-white cursor-pointer"
+              className="btn-primary px-8 py-4 text-lg font-semibold rounded-full hover-lift animate-slideInRight"
             >
-              Shop Now
+              Grab Yours
             </button>
           </div>
         </div>

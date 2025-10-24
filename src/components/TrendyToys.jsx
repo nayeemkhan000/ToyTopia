@@ -14,24 +14,24 @@ const TrendyToys = () => {
   }, []);
 
   return (
-    <div className="max-w-[1500px] mx-auto px-5 my-[100px]">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
       <h1
-        className="text-[70px] mb-10 text-center text-[#000000] "
-        style={{ fontFamily: "Fredoka One" }}
+        className="text-4xl md:text-5xl lg:text-6xl mb-12 text-center text-primary font-bold animate-fadeInUp"
+        style={{ fontFamily: "Inter, sans-serif" }}
       >
-        Trendy Toys
+        Featured Toys
       </h1>
 
-      <div className="grid grid-cols-3 mt-[100px] gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
         {toyItems.map((toyItem) => (
           <Card key={toyItem.toyId} toy={toyItem} />
         ))}
       </div>
 
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-center mt-12">
         <button
           onClick={() => navigateToPage("/products", { state: { toys: toyItems } })}
-          className="bg-[#FBC270] text-[#00000088] shadow-md font-semibold px-10 py-5 mt-5 rounded-full hover:bg-[#4178a1] transition-colors text-[20px] cursor-pointer"
+          className="btn-primary px-8 py-4 text-lg font-semibold rounded-full hover-lift"
         >
           Discover More
         </button>

@@ -12,50 +12,50 @@ const Card = ({ toy: toyItem }) => {
   };
 
   return (
-    <div className="bg-white p-4 flex flex-col justify-between h-full gap-3 rounded-2xl shadow-lg hover:shadow-lg transition-shadow">
+    <div className="card hover-lift flex flex-col justify-between h-full gap-4 p-6">
       <div
-        className="bg-[#FEEEC1] rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer"
+        className="bg-accent rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer group"
         onClick={handleNavigateToDetails}
       >
         <img
           src={toyItem.pictureURL}
           alt={toyItem.toyName}
-          className="w-full h-[300px] object-contain"
+          className="w-full h-[250px] md:h-[300px] object-contain group-hover:scale-105 transition-transform duration-300"
         />
       </div>
 
-      <div className="flex justify-between text-[16px] text-black">
+      <div className="flex justify-between text-sm text-secondary">
         <p>
-          Rating: <span className="font-semibold">{toyItem.rating}</span>
+          Rating: <span className="font-semibold text-accent">{toyItem.rating}</span>
         </p>
         <p>
-          Available:{" "}
-          <span className="font-semibold">{toyItem.availableQuantity}</span>
+          In Stock:{" "}
+          <span className="font-semibold text-accent">{toyItem.availableQuantity}</span>
         </p>
       </div>
 
-      <p
+      <h3
         onClick={handleNavigateToDetails} 
-        className="font-semibold text-[20px] hover:text-[#559BD7] cursor-pointer text-black"
+        className="font-bold text-lg text-primary hover:text-accent cursor-pointer transition-colors"
       >
         {toyItem.toyName}
-      </p>
+      </h3>
 
-      <p className="text-[#54576B] text-[14px]">
+      <p className="text-secondary text-sm leading-relaxed">
         {truncatedDescription}{" "}
         <span
           onClick={handleNavigateToDetails}
-          className="text-blue-500 cursor-pointer hover:underline"
+          className="text-accent cursor-pointer hover:underline font-medium"
         >
-          See More
+          Explore More
         </span>
       </p>
 
       <button
         onClick={handleNavigateToDetails} 
-        className="w-full bg-[#FBC270] p-2 rounded-2xl shadow-md text-[#00000088] cursor-pointer font-semibold text-[20px] hover:bg-[#4178a1] transition-colors hover:text-white"
+        className="btn-primary w-full py-3 text-base font-semibold rounded-xl"
       >
-        Add to Cart
+        Add to Basket
       </button>
     </div>
   );

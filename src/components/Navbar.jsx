@@ -22,30 +22,30 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-[#C1E5FF] flex items-center justify-between px-[80px] py-2 w-full shadow-md fixed top-0 left-0 z-50">
+    <div className="bg-card border-b border-accent flex items-center justify-between px-4 md:px-8 lg:px-20 py-4 w-full shadow-lg fixed top-0 left-0 z-50 backdrop-blur-md">
       <h1
-        className="text-[#FF616B] text-4xl font-extrabold"
-        style={{ fontFamily: "Fredoka One" }}
+        className="text-accent text-2xl md:text-3xl lg:text-4xl font-bold hover-lift"
+        style={{ fontFamily: "Inter, sans-serif" }}
       >
-        <Link to="/">ToyTopia</Link>
+        <Link to="/" className="hover:text-primary transition-colors">ToyTopia</Link>
       </h1>
 
-      <ul className="list-none text-[#464D4D] flex gap-10 font-bold">
+      <ul className="list-none text-secondary flex gap-4 md:gap-6 lg:gap-8 font-medium">
         <li>
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-[#FF616B] font-bold" : "hover:text-[#1f1f1f]"
+              isActive ? "text-accent font-semibold" : "hover:text-primary transition-colors"
             }
           >
-            Home
+            Dashboard
           </NavLink>
         </li>
         <li>
           <NavLink
             to="/products"
             className={({ isActive }) =>
-              isActive ? "text-[#FF616B] font-bold" : "hover:text-[#1f1f1f]"
+              isActive ? "text-accent font-semibold" : "hover:text-primary transition-colors"
             }
           >
             Products
@@ -55,7 +55,7 @@ const Navbar = () => {
           <NavLink
             to="/aboutus"
             className={({ isActive }) =>
-              isActive ? "text-[#FF616B] font-bold" : "hover:text-[#1f1f1f]"
+              isActive ? "text-accent font-semibold" : "hover:text-primary transition-colors"
             }
           >
             About Us
@@ -63,13 +63,16 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <div className="flex items-center gap-5">
-        <Link to="/cart">
-          <MdShoppingCart className="text-4xl text-black cursor-pointer" />
+      <div className="flex items-center gap-3 md:gap-4">
+        <Link to="/cart" className="relative group">
+          <MdShoppingCart className="text-2xl md:text-3xl text-primary hover:text-accent cursor-pointer transition-colors" />
+          <span className="absolute -top-2 -right-2 bg-accent text-primary text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold">
+            0
+          </span>
         </Link>
 
         {currentUser ? (
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <div
               className="relative group cursor-pointer"
               title={currentUser.displayName || "User"}
@@ -79,22 +82,22 @@ const Navbar = () => {
                 <img
                   src={currentUser.photoURL}
                   alt={currentUser.displayName || "User"}
-                  className="w-10 h-10 rounded-full object-cover border-2 border-[#FBC270]"
+                  className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover border-2 border-accent hover:border-primary transition-colors"
                 />
               ) : (
-                <div className="w-10 h-10 rounded-full bg-[#FBC270] flex items-center justify-center text-white font-bold">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-accent flex items-center justify-center text-primary font-bold hover:bg-primary hover:text-accent transition-colors">
                   {currentUser.displayName ? currentUser.displayName[0].toUpperCase() : "U"}
                 </div>
               )}
 
-              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+              <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-accent text-primary text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
                 {currentUser.displayName || "User"}
               </span>
             </div>
 
             <button
               onClick={handleUserLogout}
-              className="bg-[#FF616B] py-2 px-5 rounded-full cursor-pointer shadow-md text-white font-semibold hover:bg-[#ff4757] transition-colors"
+              className="btn-secondary text-sm px-3 py-2"
             >
               Logout
             </button>
@@ -102,7 +105,7 @@ const Navbar = () => {
         ) : (
           <Link
             to="/signin"
-            className="bg-[#FBC270] py-2 px-5 rounded-full shadow-md text-[#00000088] font-semibold hover:bg-[#4178a1] transition-colors hover:text-white"
+            className="btn-primary text-sm px-4 py-2"
           >
             Sign In
           </Link>

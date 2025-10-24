@@ -8,46 +8,40 @@ import { RiTwitterXFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <div
-      className="flex justify-between items-start px-[80px] mt-30 p-10"
-      style={{
-        boxShadow:
-          "0 -4px 6px -1px rgba(0,0,0,0.1), 0 4px 6px -1px rgba(0,0,0,0.1)",
-      }}
-    >
-      <div className="flex flex-col gap-5 w-1/3">
+    <div className="bg-card border-t border-accent flex flex-col lg:flex-row justify-between items-start px-4 md:px-8 lg:px-20 py-12 gap-8">
+      <div className="flex flex-col gap-6 w-full lg:w-1/3">
         <h1
-          className="text-[#FF616B] text-5xl"
-          style={{ fontFamily: "Fredoka One" }}
+          className="text-accent text-3xl md:text-4xl lg:text-5xl font-bold hover-lift"
+          style={{ fontFamily: "Inter, sans-serif" }}
         >
-          <Link to="/">ToyTopia</Link>
+          <Link to="/" className="hover:text-primary transition-colors">ToyTopia</Link>
         </h1>
-        <p className="text-[18px]">
-          Welcome to our world of imagination and play! At Sarah's Toy Emporium,
+        <p className="text-secondary text-base md:text-lg leading-relaxed">
+          Welcome to our world of imagination and play! At ToyTopia,
           we believe in creating magical experiences for children and igniting
-          their joy.
+          their joy through premium toys and endless fun.
         </p>
-        <div className="flex items-center gap-2">
-          <FaPhoneAlt className="text-[20px]" />
-          <p className="text-[18px]">01889719992</p>
+        <div className="flex items-center gap-3">
+          <FaPhoneAlt className="text-accent text-lg" />
+          <p className="text-primary text-base md:text-lg">01889719992</p>
         </div>
-        <div className="flex items-center gap-2">
-          <IoMdMail className="text-[20px]" />
-          <p className="text-[18px]">nayeem.cs000@gmail.com</p>
+        <div className="flex items-center gap-3">
+          <IoMdMail className="text-accent text-lg" />
+          <p className="text-primary text-base md:text-lg">nayeem.cs000@gmail.com</p>
         </div>
       </div>
 
-      <div className="w-full flex flex-col items-center gap-4">
-        <h1
-          className="text-3xl font-semibold"
-          style={{ fontFamily: "Fredoka One" }}
+      <div className="w-full lg:w-1/3 flex flex-col items-center gap-6">
+        <h2
+          className="text-2xl md:text-3xl font-semibold text-primary text-center"
+          style={{ fontFamily: "Inter, sans-serif" }}
         >
-          Subscribe to our Newsletter
-        </h1>
+          Stay Updated
+        </h2>
 
-        <div className="w-7/12 relative">
+        <div className="w-full max-w-md relative">
           <svg
-            className="h-[1em] absolute left-3 top-1/2 -translate-y-1/2 opacity-50"
+            className="h-5 w-5 absolute left-3 top-1/2 -translate-y-1/2 text-secondary"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -61,44 +55,44 @@ const Footer = () => {
           </svg>
           <input
             type="email"
-            placeholder="mail@site.com"
+            placeholder="Enter your email"
             required
-            className="w-full pl-10 pr-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+            className="input-field w-full pl-10 pr-4 py-3"
           />
         </div>
 
-        <button className="w-7/12 shadow-md bg-[#FBC270] py-3 cursor-pointer rounded-full text-[#00000088] font-semibold text-[20px] hover:bg-[#4178a1] hover:text-white transition-colors">
-          Subscribe
+        <button className="btn-primary w-full max-w-md py-3 text-lg font-semibold">
+          Join Newsletter
         </button>
 
-        <div className="flex items-center gap-4 mt-2 text-2xl text-white">
-          <FiFacebook className="text-[30px] cursor-pointer hover:scale-[1.5]" />
-          <FaInstagram className="text-[30px] cursor-pointer hover:scale-[1.5]" />
-          <RiTwitterXFill className="text-[30px] cursor-pointer hover:scale-[1.5]" />
+        <div className="flex items-center gap-6 mt-4">
+          <FiFacebook className="text-2xl md:text-3xl text-secondary hover:text-accent cursor-pointer hover:scale-110 transition-all" />
+          <FaInstagram className="text-2xl md:text-3xl text-secondary hover:text-accent cursor-pointer hover:scale-110 transition-all" />
+          <RiTwitterXFill className="text-2xl md:text-3xl text-secondary hover:text-accent cursor-pointer hover:scale-110 transition-all" />
         </div>
       </div>
 
-      <div>
-        <h1 className="text-3xl font-semibold">Important Links</h1>
-        <ul className="list-none flex flex-col gap-2 mt-4">
+      <div className="w-full lg:w-1/3">
+        <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-6">Quick Links</h2>
+        <ul className="list-none flex flex-col gap-4">
           <li>
-            <Link to="/" className="hover:text-[#1f1f1f] font-[20px] ">
-              Home
+            <Link to="/" className="text-secondary hover:text-accent text-lg font-medium transition-colors">
+              Dashboard
             </Link>
           </li>
           <li>
-            <Link to="/cart" className="hover:text-[#1f1f1f] font-[20px]">
-              Cart
+            <Link to="/cart" className="text-secondary hover:text-accent text-lg font-medium transition-colors">
+              Shopping Basket
             </Link>
           </li>
           <li>
-            <Link to="/products" className="hover:text-[#1f1f1f] font-[20px]">
+            <Link to="/products" className="text-secondary hover:text-accent text-lg font-medium transition-colors">
               Products
             </Link>
           </li>
           <li>
-            <Link to="/aboutus" className="hover:text-[#1f1f1f] font-[50px]">
-              About
+            <Link to="/aboutus" className="text-secondary hover:text-accent text-lg font-medium transition-colors">
+              About Us
             </Link>
           </li>
         </ul>

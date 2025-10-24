@@ -65,91 +65,93 @@ const ToyDetails = () => {
   };
 
   return (
-    <div className="flex flex-col items-center text-black px-4 md:px-20 w-full md:w-10/12 mx-auto gap-20">
-      <div className="flex flex-col md:flex-row items-center gap-10 bg-white p-5 rounded-2xl mx-auto justify-center shadow-lg">
+    <div className="flex flex-col items-center text-primary px-4 md:px-8 lg:px-20 w-full max-w-7xl mx-auto gap-16 py-8">
+      <div className="card hover-lift flex flex-col lg:flex-row items-center gap-8 lg:gap-12 p-8 mx-auto justify-center">
         <img
-          src={toy.pictureURL}
-          alt={toy.toyName}
-          className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] bg-[#67D4E0] rounded-2xl object-cover"
+          src={toyData.pictureURL}
+          alt={toyData.toyName}
+          className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] bg-accent rounded-2xl object-cover hover:scale-105 transition-transform duration-300"
         />
-        <div className="flex flex-col gap-5">
-          <h2 className="text-4xl font-semibold">{toy.toyName}</h2>
-          <p className="text-[18px] text-gray-700">
-            {toy.description.split(" ").slice(0, 15).join(" ")}...{" "}
+        <div className="flex flex-col gap-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary">{toyData.toyName}</h2>
+          <p className="text-lg text-secondary leading-relaxed">
+            {toyData.description.split(" ").slice(0, 15).join(" ")}...{" "}
             <span
-              className="text-blue-500 cursor-pointer hover:underline"
-              onClick={scrollToDetails}
+              className="text-accent cursor-pointer hover:underline font-medium"
+              onClick={scrollToDetailsSection}
             >
-              See More
+              Explore More
             </span>
           </p>
 
-          <div className="flex items-center gap-2">
-            <span className="text-xl">Price :</span>
-            <p className="font-semibold text-[18px]">${toy.price}</p>
+          <div className="flex items-center gap-3">
+            <span className="text-xl text-secondary">Price:</span>
+            <p className="font-bold text-2xl text-accent">${toyData.price}</p>
           </div>
 
-          <div className="flex gap-2 text-xl items-center">
+          <div className="flex gap-3 text-xl items-center">
             <button
-              onClick={handleDecrease}
-              className="flex justify-center items-center w-12 h-12 rounded-xl bg-[#F4F2F0] cursor-pointer shadow-md hover:bg-[#e0e0e0]"
+              onClick={handleQuantityDecrease}
+              className="flex justify-center items-center w-12 h-12 rounded-xl bg-accent text-primary cursor-pointer shadow-md hover:bg-primary hover:text-accent transition-colors"
             >
               -
             </button>
 
-            <span className="flex justify-center items-center w-12 h-12 rounded-xl bg-[#FBC270] text-[#00000088] font-semibold text-[20px]">
-              {quantity}
+            <span className="flex justify-center items-center w-12 h-12 rounded-xl bg-primary text-accent font-bold text-xl">
+              {itemQuantity}
             </span>
 
             <button
-              onClick={handleIncrease}
+              onClick={handleQuantityIncrease}
               className={`flex justify-center items-center w-12 h-12 rounded-xl cursor-pointer shadow-md transition-colors ${
-                quantity < toy.availableQuantity
-                  ? "bg-[#F4F2F0] hover:bg-[#e0e0e0]"
-                  : "bg-gray-300 cursor-not-allowed"
+                itemQuantity < toyData.availableQuantity
+                  ? "bg-accent text-primary hover:bg-primary hover:text-accent"
+                  : "bg-secondary text-primary cursor-not-allowed"
               }`}
-              disabled={quantity >= toy.availableQuantity}
+              disabled={itemQuantity >= toyData.availableQuantity}
             >
               +
             </button>
           </div>
 
           <button
-            onClick={handleAddToCart}
-            disabled={quantity === 0}
-            className={`w-2/5 px-2 py-3 cursor-pointer rounded-4xl font-semibold text-[20px] transition-colors ${
-              quantity === 0
-                ? "bg-gray-300 text-gray-600 cursor-not-allowed"
-                : "bg-[#FBC270] text-[#00000088] hover:bg-[#4178a1] hover:text-white"
+            onClick={handleAddItemToCart}
+            disabled={itemQuantity === 0}
+            className={`px-6 py-3 cursor-pointer rounded-xl font-semibold text-lg transition-colors ${
+              itemQuantity === 0
+                ? "bg-secondary text-primary cursor-not-allowed"
+                : "btn-primary"
             }`}
           >
-            Add to Cart
+            Add to Basket
           </button>
 
-          <div className="flex gap-5 mt-2">
-            <p className="text-[18px]">Share this product</p>
+          <div className="flex gap-6 mt-4">
+            <p className="text-lg text-secondary">Share this product</p>
             <div className="flex gap-4">
-              <FiFacebook className="text-[30px] cursor-pointer hover:scale-[1.5] transition-transform" />
-              <FaInstagram className="text-[30px] cursor-pointer hover:scale-[1.5] transition-transform" />
-              <RiTwitterXFill className="text-[30px] cursor-pointer hover:scale-[1.5] transition-transform" />
+              <FiFacebook className="text-2xl text-secondary hover:text-accent cursor-pointer hover:scale-110 transition-all" />
+              <FaInstagram className="text-2xl text-secondary hover:text-accent cursor-pointer hover:scale-110 transition-all" />
+              <RiTwitterXFill className="text-2xl text-secondary hover:text-accent cursor-pointer hover:scale-110 transition-all" />
             </div>
           </div>
         </div>
       </div>
 
       <div
-        ref={detailsRef}
-        className="flex flex-col gap-15 items-center w-full"
+        ref={detailsElementRef}
+        className="flex flex-col gap-12 items-center w-full"
       >
         <h1
-          className="text-[70px] text-[#FAFAFA]"
-          style={{ fontFamily: "Fredoka One" }}
+          className="text-4xl md:text-5xl lg:text-6xl text-primary font-bold text-center"
+          style={{ fontFamily: "Inter, sans-serif" }}
         >
-          Product Details
+          Product Overview
         </h1>
-        <p className="shadow-xl bg-white px-10 py-6 rounded-2xl text-[20px]">
-          {toy.description}
-        </p>
+        <div className="card p-8 max-w-4xl">
+          <p className="text-lg text-secondary leading-relaxed">
+            {toyData.description}
+          </p>
+        </div>
       </div>
     </div>
   );
