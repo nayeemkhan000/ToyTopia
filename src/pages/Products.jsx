@@ -26,27 +26,13 @@ const Products = () => {
             Our Products
           </h1>
           <div className="w-full max-w-2xl mx-auto">
-            <label className="relative block">
-              <svg
-                className="h-5 w-5 absolute left-4 top-1/2 transform -translate-y-1/2 text-secondary"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.3-4.3"></path>
-              </svg>
-
-              <input
-                type="search"
-                placeholder="Search for amazing toys..."
-                value={searchQuery}
-                onChange={(event) => setSearchQuery(event.target.value)}
-                className="input-field w-full pl-12 pr-4 py-4 text-lg"
-              />
-            </label>
+            <input
+              type="search"
+              placeholder="Search for amazing toys..."
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              className="input-field w-full px-4 py-4 text-lg"
+            />
           </div>
         </div>
 
