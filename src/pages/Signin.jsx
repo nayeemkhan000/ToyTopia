@@ -100,10 +100,10 @@ const Signin = () => {
   };
 
   return (
-    <div className="w-full flex justify-center items-center min-h-[80vh] py-12">
+    <div className="min-h-screen bg-dark flex justify-center items-center py-12">
       <div className="card p-8 md:p-10 w-[90%] max-w-[500px] shadow-2xl">
         <h1
-          className="text-accent text-3xl md:text-4xl text-center mb-10 font-bold"
+          className="text-white text-3xl md:text-4xl text-center mb-10 font-bold uppercase tracking-wider"
           style={{ fontFamily: "Inter, sans-serif" }}
         >
           Welcome Back
@@ -150,11 +150,11 @@ const Signin = () => {
             </span>
           </div>
 
-          <div className="flex justify-end text-sm text-accent font-semibold">
+          <div className="flex justify-end text-sm font-semibold">
             <button
               type="button"
               onClick={handleForgotPasswordClick}
-              className="hover:underline cursor-pointer transition-colors"
+              className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent hover:underline cursor-pointer transition-colors"
             >
               Forgot Password?
             </button>
@@ -200,7 +200,7 @@ const Signin = () => {
             Don't have an account?{" "}
             <Link
               to="/signup"
-              className="text-accent font-semibold hover:underline transition-colors"
+              className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent font-semibold hover:underline transition-colors"
             >
               Create one
             </Link>

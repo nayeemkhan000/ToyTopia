@@ -27,12 +27,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00ADB5;
+  background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #008B94;
+  background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
 }
 
 /* Smooth transitions */
@@ -44,13 +44,13 @@ body {
 button:focus,
 input:focus,
 textarea:focus {
-  outline: 2px solid #00ADB5;
+  outline: 2px solid #00c6ff;
   outline-offset: 2px;
 }
 
 /* Selection styles */
 ::selection {
-  background-color: #00ADB5;
+  background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
   color: #121212;
 }
 
@@ -76,11 +76,14 @@ textarea:focus {
 }
 
 .text-accent {
-  color: #00ADB5;
+  background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .border-accent {
-  border-color: #00ADB5;
+  border-color: #00c6ff;
 }
 
 /* Hover effects */
@@ -95,7 +98,7 @@ textarea:focus {
 
 /* Button styles */
 .btn-primary {
-  background: linear-gradient(135deg, #00ADB5, #008B94);
+  background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
   color: #121212;
   border: none;
   padding: 12px 24px;
@@ -106,15 +109,15 @@ textarea:focus {
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #008B94, #006B73);
+  background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 173, 181, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 198, 255, 0.3);
 }
 
 .btn-secondary {
   background: transparent;
-  color: #00ADB5;
-  border: 2px solid #00ADB5;
+  color: #00c6ff;
+  border: 2px solid #00c6ff;
   padding: 10px 22px;
   border-radius: 8px;
   font-weight: 600;
@@ -123,7 +126,7 @@ textarea:focus {
 }
 
 .btn-secondary:hover {
-  background: #00ADB5;
+  background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
   color: #121212;
   transform: translateY(-2px);
 }
@@ -138,8 +141,8 @@ textarea:focus {
 }
 
 .card:hover {
-  border-color: #00ADB5;
-  box-shadow: 0 8px 25px rgba(0, 173, 181, 0.1);
+  border-color: #00c6ff;
+  box-shadow: 0 8px 25px rgba(0, 198, 255, 0.1);
 }
 
 /* Input styles */
@@ -153,8 +156,8 @@ textarea:focus {
 }
 
 .input-field:focus {
-  border-color: #00ADB5;
-  box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.1);
+  border-color: #00c6ff;
+  box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.1);
 }
 
 .input-field::placeholder {

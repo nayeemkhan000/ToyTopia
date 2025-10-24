@@ -26,11 +26,11 @@ const Card = ({ toy: toyItem }) => {
 
       <div className="flex justify-between text-sm text-secondary">
         <p>
-          Rating: <span className="font-semibold text-accent">{toyItem.rating}</span>
+          Rating: <span className="font-semibold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">{toyItem.rating}</span>
         </p>
         <p>
           In Stock:{" "}
-          <span className="font-semibold text-accent">{toyItem.availableQuantity}</span>
+          <span className="font-semibold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">{toyItem.availableQuantity}</span>
         </p>
       </div>
 
@@ -45,7 +45,7 @@ const Card = ({ toy: toyItem }) => {
         {truncatedDescription}{" "}
         <span
           onClick={handleNavigateToDetails}
-          className="text-accent cursor-pointer hover:underline font-medium"
+          className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent cursor-pointer hover:underline font-medium"
         >
           Explore More
         </span>

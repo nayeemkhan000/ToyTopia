@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { MdShoppingCart } from "react-icons/md";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { CartContext } from "../context/CartContext";
 
 const Navbar = () => {
   const { user: currentUser, logout: userLogout } = useContext(AuthContext);
+  const { cartItems: cartItemList } = useContext(CartContext);
   const navigateToPage = useNavigate();
 
   const handleUserLogout = async () => {
@@ -24,10 +26,10 @@ const Navbar = () => {
   return (
     <div className="bg-card border-b border-accent flex items-center justify-between px-4 md:px-8 lg:px-20 py-4 w-full shadow-lg fixed top-0 left-0 z-50 backdrop-blur-md">
       <h1
-        className="text-accent text-2xl md:text-3xl lg:text-4xl font-bold hover-lift"
+        className="text-white text-2xl md:text-3xl lg:text-4xl font-bold hover-lift uppercase tracking-wider"
         style={{ fontFamily: "Inter, sans-serif" }}
       >
-        <Link to="/" className="hover:text-primary transition-colors">ToyTopia</Link>
+        <Link to="/" className="hover:opacity-80 transition-opacity">TOYTOPIA</Link>
       </h1>
 
       <ul className="list-none text-secondary flex gap-4 md:gap-6 lg:gap-8 font-medium">
@@ -66,8 +68,8 @@ const Navbar = () => {
       <div className="flex items-center gap-3 md:gap-4">
         <Link to="/cart" className="relative group">
           <MdShoppingCart className="text-2xl md:text-3xl text-primary hover:text-accent cursor-pointer transition-colors" />
-          <span className="absolute -top-2 -right-2 bg-accent text-primary text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold">
-            0
+          <span className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-500 to-cyan-400 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold">
+            {cartItemList.length}
           </span>
         </Link>
 

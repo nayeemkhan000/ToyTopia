@@ -77,7 +77,7 @@ const ToyDetails = () => {
           <p className="text-lg text-secondary leading-relaxed">
             {toyData.description.split(" ").slice(0, 15).join(" ")}...{" "}
             <span
-              className="text-accent cursor-pointer hover:underline font-medium"
+              className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent cursor-pointer hover:underline font-medium"
               onClick={scrollToDetailsSection}
             >
               Explore More
@@ -86,7 +86,7 @@ const ToyDetails = () => {
 
           <div className="flex items-center gap-3">
             <span className="text-xl text-secondary">Price:</span>
-            <p className="font-bold text-2xl text-accent">${toyData.price}</p>
+            <p className="font-bold text-2xl bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">${toyData.price}</p>
           </div>
 
           <div className="flex gap-3 text-xl items-center">

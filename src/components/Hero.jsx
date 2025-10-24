@@ -50,7 +50,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-accent to-primary mt-[-80px] shadow-2xl">
+    <div className="relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 mt-[-80px] shadow-2xl">
       {heroBanners.map((bannerItem, index) => (
         <div
           key={bannerItem.id}
