@@ -19,7 +19,9 @@ const ToyDetails = () => {
     fetch("/data.json")
       .then((response) => response.json())
       .then((toyDataArray) => {
-        const selectedToy = toyDataArray.find((toyItem) => toyItem.toyId === parseInt(toyIdentifier));
+        const selectedToy = toyDataArray.find(
+          (toyItem) => toyItem.toyId === parseInt(toyIdentifier)
+        );
         setToyData(selectedToy);
         setIsLoading(false);
       })
@@ -41,7 +43,8 @@ const ToyDetails = () => {
     );
 
   const handleQuantityIncrease = () => {
-    if (itemQuantity < toyData.availableQuantity) setItemQuantity(itemQuantity + 1);
+    if (itemQuantity < toyData.availableQuantity)
+      setItemQuantity(itemQuantity + 1);
   };
 
   const handleQuantityDecrease = () => {
@@ -65,8 +68,8 @@ const ToyDetails = () => {
   };
 
   return (
-   <div className="flex flex-col items-center text-primary px-4 md:px-8 lg:px-20 w-full max-w-7xl mx-auto gap-16 pt-16 pb-8">
-
+    <div className="flex flex-col items-center text-primary px-4 md:px-8 lg:px-20 w-full max-w-7xl mx-auto gap-16 pt-40 md:pt-44 pb-12">
+      {/* Product Card Section */}
       <div className="card hover-lift flex flex-col lg:flex-row items-center gap-8 lg:gap-12 p-8 mx-auto justify-center">
         <img
           src={toyData.pictureURL}
@@ -74,7 +77,9 @@ const ToyDetails = () => {
           className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] bg-accent rounded-2xl object-cover hover:scale-105 transition-transform duration-300"
         />
         <div className="flex flex-col gap-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary">{toyData.toyName}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary">
+            {toyData.toyName}
+          </h2>
           <p className="text-lg text-secondary leading-relaxed">
             {toyData.description.split(" ").slice(0, 15).join(" ")}...{" "}
             <span
@@ -87,7 +92,9 @@ const ToyDetails = () => {
 
           <div className="flex items-center gap-3">
             <span className="text-xl text-secondary">Price:</span>
-            <p className="font-bold text-2xl bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">${toyData.price}</p>
+            <p className="font-bold text-2xl bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+              ${toyData.price}
+            </p>
           </div>
 
           <div className="flex gap-3 text-xl items-center">
@@ -138,6 +145,7 @@ const ToyDetails = () => {
         </div>
       </div>
 
+      {/* Details Section */}
       <div
         ref={detailsElementRef}
         className="flex flex-col gap-12 items-center w-full"

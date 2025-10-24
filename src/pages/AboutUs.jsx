@@ -7,7 +7,8 @@ import brands from "../../public/assets/all.png";
 
 const AboutUs = () => {
   return (
-    <div className="flex flex-col items-center justify-start text-black w-full min-h-screen gap-8 pt-8">
+    <div className="min-h-screen bg-dark py-12 flex justify-center items-center gap-10 flex-col">
+
       <h1
         className="text-[50px] text-[#FAFAFA] mt-0 mb-0"
         style={{ fontFamily: "Fredoka One" }}

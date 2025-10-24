@@ -8,12 +8,12 @@ import { RiTwitterXFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-card border-t border-accent">
+    <footer className="w-full bg-card border-t border-accent mx-auto">
       <div className="max-w-[1400px] mx-auto px-6 md:px-8 py-12">
-        <div className="flex flex-wrap justify-start gap-12 lg:gap-20">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mx-auto">
+
           {/* Brand & Contact - LEFT */}
-          <div className="flex flex-col gap-4 w-full md:w-[300px] lg:w-[320px]">
+          <div className="flex flex-col gap-4 w-full md:w-[320px] lg:w-[350px] mx-auto">
             <h1
               className="text-white text-3xl md:text-4xl font-bold uppercase tracking-wider"
               style={{ fontFamily: "Inter, sans-serif" }}
@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
 
           {/* Newsletter & Social - MIDDLE */}
-          <div className="flex flex-col gap-4 w-full md:w-[320px] lg:w-[340px]">
+          <div className="flex flex-col gap-4 w-full md:w-[320px] lg:w-[340px] mx-auto">
             <h2
               className="text-xl md:text-2xl font-semibold text-primary"
               style={{ fontFamily: "Inter, sans-serif" }}
@@ -59,7 +59,7 @@ const Footer = () => {
               Join Newsletter
             </button>
 
-            <div className="flex items-center gap-5 mt-2">
+            <div className="flex items-center gap-5 mt-2 justify-center md:justify-start">
               <a href="#" aria-label="Facebook">
                 <FiFacebook className="text-2xl text-secondary hover:text-accent cursor-pointer hover:scale-110 transition-all" />
               </a>
@@ -73,7 +73,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links - RIGHT */}
-          <div className="flex flex-col gap-4 w-full md:w-[200px]">
+          <div className="flex flex-col gap-4 w-full md:w-[200px] mx-auto">
             <h2 className="text-xl md:text-2xl font-semibold text-primary">Quick Links</h2>
             <ul className="list-none flex flex-col gap-3">
               <li>
