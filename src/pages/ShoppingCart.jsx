@@ -2,7 +2,13 @@ import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
 const ShoppingCart = () => {
-  const { cartItems: cartItemList, removeFromCart: removeItemFromCart, grandTotal: totalAmount } = useContext(CartContext);
+  const { 
+    cartItems: cartItemList, 
+    removeFromCart: removeItemFromCart, 
+    updateItemQuantity: updateQuantity,
+    grandTotal: totalAmount,
+    totalItems: totalItemCount
+  } = useContext(CartContext);
 
   return (
     <div className="min-h-screen bg-dark py-8">
@@ -18,6 +24,12 @@ const ShoppingCart = () => {
                 <p className="text-lg text-secondary mb-8 text-center max-w-md">
                   Start adding some amazing toys to your basket!
                 </p>
+                <a 
+                  href="/products" 
+                  className="btn-primary px-8 py-3 text-lg font-semibold rounded-xl hover-lift"
+                >
+                  Browse Products
+                </a>
               </div>
             )}
 
@@ -37,14 +49,28 @@ const ShoppingCart = () => {
                     <p className="text-secondary mb-4">
                       Seller: <span className="font-semibold text-accent">{cartItem.seller}</span>
                     </p>
-                    <div className="grid grid-cols-3 gap-4 text-center">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                       <div>
                         <p className="text-secondary text-sm mb-1">Price</p>
                         <p className="font-bold text-accent">${cartItem.price.toFixed(2)}</p>
                       </div>
                       <div>
                         <p className="text-secondary text-sm mb-1">Quantity</p>
-                        <p className="font-bold text-primary">{cartItem.quantity}</p>
+                        <div className="flex items-center justify-center gap-2">
+                          <button
+                            onClick={() => updateQuantity(cartItem.id, cartItem.quantity - 1)}
+                            className="w-8 h-8 rounded-full bg-accent text-primary hover:bg-primary hover:text-accent transition-colors flex items-center justify-center font-bold"
+                          >
+                            -
+                          </button>
+                          <span className="font-bold text-primary min-w-[2rem]">{cartItem.quantity}</span>
+                          <button
+                            onClick={() => updateQuantity(cartItem.id, cartItem.quantity + 1)}
+                            className="w-8 h-8 rounded-full bg-accent text-primary hover:bg-primary hover:text-accent transition-colors flex items-center justify-center font-bold"
+                          >
+                            +
+                          </button>
+                        </div>
                       </div>
                       <div>
                         <p className="text-secondary text-sm mb-1">Sub Total</p>
@@ -71,7 +97,7 @@ const ShoppingCart = () => {
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between items-center">
                   <span className="text-lg text-secondary">Total Items:</span>
-                  <span className="font-semibold text-accent text-lg">{cartItemList.length}</span>
+                  <span className="font-semibold text-accent text-lg">{totalItemCount}</span>
                 </div>
                 <div className="border-t border-accent pt-4">
                   <div className="flex justify-between items-center">
