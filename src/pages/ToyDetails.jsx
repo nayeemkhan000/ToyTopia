@@ -70,11 +70,12 @@ const ToyDetails = () => {
   return (
     <div className="flex flex-col items-center text-primary px-4 md:px-8 lg:px-20 w-full max-w-7xl mx-auto gap-16 pt-40 md:pt-44 pb-12">
       {/* Product Card Section */}
-      <div className="card hover-lift flex flex-col lg:flex-row items-center gap-8 lg:gap-12 p-8 mx-auto justify-center">
+      <div className="card hover-lift flex flex-col lg:flex-row items-center gap-8 lg:gap-12 p-8 mx-auto justify-center mt-32 md:mt-36 lg:mt-40">
+
         <img
           src={toyData.pictureURL}
           alt={toyData.toyName}
-          className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] bg-accent rounded-2xl object-cover hover:scale-105 transition-transform duration-300"
+          className="w-[150px] h-[150px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] bg-accent rounded-2xl object-cover hover:scale-105 transition-transform duration-300"
         />
         <div className="flex flex-col gap-6">
           <h2 className="text-3xl md:text-4xl font-bold text-primary">

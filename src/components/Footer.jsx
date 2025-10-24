@@ -1,105 +1,89 @@
 import React from "react";
-import { FaPhoneAlt } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { Link } from "react-router";
 import { FiFacebook } from "react-icons/fi";
 import { FaInstagram } from "react-icons/fa6";
 import { RiTwitterXFill } from "react-icons/ri";
+import { MdEmail, MdCall } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-card border-t border-accent mx-auto">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mx-auto">
-
-          {/* Brand & Contact - LEFT */}
-          <div className="flex flex-col gap-4 w-full md:w-[320px] lg:w-[350px] mx-auto">
-            <h1
-              className="text-white text-3xl md:text-4xl font-bold uppercase tracking-wider"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              <Link to="/" className="hover:opacity-80 transition-opacity">
-                TOYTOPIA
-              </Link>
-            </h1>
-            <p className="text-secondary text-sm md:text-base leading-relaxed">
-              Creating magical experiences for children through premium toys and endless fun.
-            </p>
-            <div className="flex flex-col gap-3 mt-2">
-              <div className="flex items-center gap-3">
-                <FaPhoneAlt className="text-accent text-base flex-shrink-0" />
-                <p className="text-primary text-sm md:text-base">01889719992</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <MdEmail className="text-accent text-lg flex-shrink-0" />
-                <p className="text-primary text-sm md:text-base">nayeem.cs000@gmail.com</p>
-              </div>
-            </div>
+    <footer className="bg-[#111] text-white px-8 md:px-20 py-10 border-t border-blue-500">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+        {/* Left Section */}
+        <div className="flex-1">
+          <h2 className="text-3xl font-bold text-white mb-3">
+            <span className="text-white">TOY</span>
+            <span className="text-blue-500">TOPIA</span>
+          </h2>
+          <p className="text-gray-400 mb-3">
+            Creating magical experiences for children through premium toys and endless fun.
+          </p>
+          <div className="flex items-center gap-2 mb-1">
+            <MdCall className="text-blue-500" />
+            <span>01889719992</span>
           </div>
+          <div className="flex items-center gap-2">
+            <MdEmail className="text-blue-500" />
+            <span>nayeem.cs000@gmail.com</span>
+          </div>
+        </div>
 
-          {/* Newsletter & Social - MIDDLE */}
-          <div className="flex flex-col gap-4 w-full md:w-[320px] lg:w-[340px] mx-auto">
-            <h2
-              className="text-xl md:text-2xl font-semibold text-primary"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              Stay Updated
-            </h2>
-
-            <div className="w-full">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                required
-                className="w-full px-4 py-2.5 rounded-lg border border-accent bg-dark text-primary text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent"
-              />
-            </div>
-
-            <button className="btn-primary w-full py-2.5 text-base font-semibold rounded-lg">
+        {/* Middle Section */}
+        <div className="flex-1">
+          <h3 className="text-xl font-semibold mb-3">Stay Updated</h3>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-2 rounded-md text-gray-500 outline-white border-amber-50"
+            />
+            <button className="bg-blue-600 px-6 py-2 rounded-md font-semibold transition border-2 border-blue-500">
               Join Newsletter
             </button>
-
-            <div className="flex items-center gap-5 mt-2 justify-center md:justify-start">
-              <a href="#" aria-label="Facebook">
-                <FiFacebook className="text-2xl text-secondary hover:text-accent cursor-pointer hover:scale-110 transition-all" />
-              </a>
-              <a href="#" aria-label="Instagram">
-                <FaInstagram className="text-2xl text-secondary hover:text-accent cursor-pointer hover:scale-110 transition-all" />
-              </a>
-              <a href="#" aria-label="Twitter">
-                <RiTwitterXFill className="text-2xl text-secondary hover:text-accent cursor-pointer hover:scale-110 transition-all" />
-              </a>
-            </div>
           </div>
-
-          {/* Quick Links - RIGHT */}
-          <div className="flex flex-col gap-4 w-full md:w-[200px] mx-auto">
-            <h2 className="text-xl md:text-2xl font-semibold text-primary">Quick Links</h2>
-            <ul className="list-none flex flex-col gap-3">
-              <li>
-                <Link to="/" className="text-secondary hover:text-accent text-sm md:text-base font-medium transition-colors">
-                  Dashboard
-                </Link>
-              </li>
-              <li>
-                <Link to="/cart" className="text-secondary hover:text-accent text-sm md:text-base font-medium transition-colors">
-                  Shopping Basket
-                </Link>
-              </li>
-              <li>
-                <Link to="/products" className="text-secondary hover:text-accent text-sm md:text-base font-medium transition-colors">
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link to="/aboutus" className="text-secondary hover:text-accent text-sm md:text-base font-medium transition-colors">
-                  About Us
-                </Link>
-              </li>
-            </ul>
+          <div className="flex gap-5 mt-4 text-2xl">
+            <a href="#" className="hover:text-blue-500 transition">
+              <FiFacebook />
+            </a>
+            <a href="#" className="hover:text-pink-500 transition">
+              <FaInstagram />
+            </a>
+            <a href="#" className="hover:text-gray-400 transition">
+              <RiTwitterXFill />
+            </a>
           </div>
-
         </div>
+
+        {/* Right Section */}
+        <div className="flex-1">
+          <h3 className="text-xl font-semibold mb-3">Quick Links</h3>
+          <ul className="space-y-2 text-gray-400">
+            <li>
+              <a href="#" className="hover:text-blue-500 transition">
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-blue-500 transition">
+                Shopping Basket
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-blue-500 transition">
+                Products
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-blue-500 transition">
+                About Us
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom Section */}
+      <div className="border-t border-gray-700 mt-10 pt-5 text-center text-gray-500 text-sm">
+        © 2025 Toytopia. All rights reserved.
       </div>
     </footer>
   );

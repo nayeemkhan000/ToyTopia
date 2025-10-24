@@ -29,7 +29,7 @@ const Navbar = () => {
         className="text-white text-2xl md:text-3xl lg:text-4xl font-bold hover-lift uppercase tracking-wider"
         style={{ fontFamily: "Inter, sans-serif" }}
       >
-        <Link to="/" className="hover:opacity-80 transition-opacity">TOYTOPIA</Link>
+        <Link to="/" className="hover:opacity-80 transition-opacity">TOY<span className="text-blue-500">TOPIA</span></Link>
       </h1>
 
       <ul className="list-none text-secondary flex gap-4 md:gap-6 lg:gap-8 font-medium">
