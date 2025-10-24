@@ -65,7 +65,8 @@ const ToyDetails = () => {
   };
 
   return (
-    <div className="flex flex-col items-center text-primary px-4 md:px-8 lg:px-20 w-full max-w-7xl mx-auto gap-16 py-8">
+   <div className="flex flex-col items-center text-primary px-4 md:px-8 lg:px-20 w-full max-w-7xl mx-auto gap-16 pt-16 pb-8">
+
       <div className="card hover-lift flex flex-col lg:flex-row items-center gap-8 lg:gap-12 p-8 mx-auto justify-center">
         <img
           src={toyData.pictureURL}

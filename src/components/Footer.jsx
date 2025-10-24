@@ -1,6 +1,5 @@
 import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
 import { Link } from "react-router";
 import { FiFacebook } from "react-icons/fi";
 import { FaInstagram } from "react-icons/fa6";
@@ -8,15 +7,18 @@ import { RiTwitterXFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <div className="bg-card border-t border-accent">
+    <footer className="w-full bg-card border-t border-accent">
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-20 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {/* Brand & Contact */}
           <div className="flex flex-col gap-6">
             <h1
               className="text-white text-3xl md:text-4xl lg:text-5xl font-bold hover-lift uppercase tracking-wider"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              <Link to="/" className="hover:opacity-80 transition-opacity">TOYTOPIA</Link>
+              <Link to="/" className="hover:opacity-80 transition-opacity">
+                TOYTOPIA
+              </Link>
             </h1>
             <p className="text-secondary text-base md:text-lg leading-relaxed">
               Welcome to our world of imagination and play! At ToyTopia,
@@ -29,12 +31,12 @@ const Footer = () => {
                 <p className="text-primary text-base md:text-lg">01889719992</p>
               </div>
               <div className="flex items-center gap-3">
-                <IoMdMail className="text-accent text-lg" />
                 <p className="text-primary text-base md:text-lg">nayeem.cs000@gmail.com</p>
               </div>
             </div>
           </div>
 
+          {/* Newsletter & Social */}
           <div className="flex flex-col items-center gap-6">
             <h2
               className="text-2xl md:text-3xl font-semibold text-primary text-center"
@@ -44,28 +46,15 @@ const Footer = () => {
             </h2>
 
             <div className="w-full max-w-md relative">
-              <svg
-                className="h-5 w-5 absolute left-3 top-1/2 -translate-y-1/2 text-secondary"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-              </svg>
               <input
                 type="email"
                 placeholder="Enter your email"
                 required
-                className="input-field w-full pl-10 pr-4 py-3"
+                className="input-field w-full pl-4 pr-4 py-3 rounded-lg border border-accent bg-dark text-primary focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent"
               />
             </div>
 
-            <button className="btn-primary w-full max-w-md py-3 text-lg font-semibold">
+            <button className="btn-primary w-full max-w-md py-3 text-lg font-semibold rounded-lg">
               Join Newsletter
             </button>
 
@@ -76,6 +65,7 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Quick Links */}
           <div className="flex flex-col gap-6">
             <h2 className="text-2xl md:text-3xl font-semibold text-primary">Quick Links</h2>
             <ul className="list-none flex flex-col gap-4">
@@ -103,7 +93,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
